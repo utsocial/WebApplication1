@@ -44,7 +44,9 @@
         <hr />
         <footer>
 
-
+            @await Component.InvokeAsync("Countries")
+            <br />
+            <vc:countries></vc:countries>
 
             <p>&copy; 2018 - WebApplication1</p>
         </footer>

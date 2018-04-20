@@ -11,7 +11,15 @@ namespace WebApplication1.ViewComponents
     {
         public CountriesViewComponent(ICountriesRepository countriesRepository)
         {
-                
+            CountriesRepository = countriesRepository;
+        }
+
+        public ICountriesRepository CountriesRepository { get; }
+
+        public IViewComponentResult Invoke()
+        {
+            var countries = CountriesRepository.getCountries();
+            return View(countries);
         }
     }
 }
