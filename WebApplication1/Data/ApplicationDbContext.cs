@@ -15,6 +15,8 @@ namespace WebApplication1.Data
         {
         }
 
+        public DbSet<Country> Countries { get; set; }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);

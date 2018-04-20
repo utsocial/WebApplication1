@@ -11,15 +11,16 @@ namespace WebApplication1.Controllers
 {
     public class HomeController : Controller
     {
-        public ICountriesRepositoryInMemory CountriesRepositoryInMemory { get; }
+        public ICountriesRepository CountriesRepositoryInMemory { get; }
 
-        public HomeController(ICountriesRepositoryInMemory countriesRepositoryInMemory)
+        public HomeController(ICountriesRepository countriesRepositoryInMemory)
         {
             CountriesRepositoryInMemory = countriesRepositoryInMemory;
         }
 
         public IActionResult Index()
         {
+            // throw new ApplicationException("Somting bad happen!!! ");
             var hardCodedContries = CountriesRepositoryInMemory.getCountries();
             return View(hardCodedContries);
         }

@@ -1,20 +1,32 @@
-﻿@model List<string>;
+﻿@model List<Country>;
 
 @{
     ViewData["Title"] = "Home Page";
 
 }
 
+@inject Microsoft.AspNetCore.Hosting.IHostingEnvironment env
+<p>@env.EnvironmentName</p>
+
 <p>@ViewData["Title"]</p>
 <ul>
-    @foreach (var contry in Model)
+    @foreach (var country in Model)
     {
         <li>
-            @contry
+            @country.name
         </li>
 
     }
 </ul>
+
+
+<environment include="Development">
+    <p>We are in Development</p>
+</environment>
+<environment include="Production">
+    <p>We are in Production</p>
+</environment>
+
 <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="6000">
     <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
